@@ -6,7 +6,6 @@ library(janeaustenr)
 library(DKdata)
 
 
-
 #Byg en dataframe med review-indhold fra Silvan
 dsilv <- tibble(stxt=reviews[1:38,"content"] )
 #Byg en dataframe med review-indhold fra Home
@@ -27,9 +26,7 @@ d %>%
 
 silgrams=dsilv %>%
  unnest_tokens(ngram, stxt, token = "ngrams", n = 3)
-  unnest_tokens(ngram, stxt, token = "ngrams", n = 2)
 #colnames(text)="content"
-
 
 # Tæl ord for Home og Silvan
 df_c=df_w %>% count(word,sort=T)
